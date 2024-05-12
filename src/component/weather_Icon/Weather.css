@@ -1,0 +1,14 @@
+.element {
+  height: 180px;
+  width: 190px;
+  margin: 10px 70px 10px 10px;
+}
+
+
+.element>svg {
+  width: 100%;
+}
+
+.white {fill:#FFFFFF}
+.gray {fill:#E0E0E0}
+.yellow {fill:#FFEB3B}

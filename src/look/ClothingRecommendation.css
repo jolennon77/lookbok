@@ -1,0 +1,35 @@
+
+
+.recommendation_card {
+  word-break: break-all;
+
+  font-size: 18px;
+  line-height: 135%;
+  color: rgba(0, 0, 0, 0.9);
+}
+.recommendation_card h2{
+  font-weight: 900;
+  margin-top: 0;
+  margin-bottom: 0;
+}
+.recommendation_card p{
+  margin-left: 10px;
+  font-weight: 600;
+}
+
+
+button {
+  font-size: 12Px;
+  padding: 0.8em 0.8em;
+  margin: 0 10px 10px 0;
+  background-color: #ffc8c8;
+  font-weight: 600;
+  border: 3px solid #ff9c9c;
+  border-radius: 1em;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px #ff9c9c;
+}
+
+button:hover {
+  transform: translate(5px, -5px);
+}
