@@ -68,6 +68,7 @@ function ClothingRecommendation({ weather }) {
         {/*{detailSuggestions.map((item, index) => (*/}
         {/*    <button key={index}>{item}</button>*/}
         {/*))}*/}
+        <p>덥다 더워</p>
       </div>
   );
 }
