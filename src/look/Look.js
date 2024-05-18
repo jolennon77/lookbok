@@ -2,11 +2,11 @@ import React from 'react';
 import './Look.css';
 import ClothingRecommendation from "./ClothingRecommendation"; // Card 컴포넌트에서 사용할 CSS 파일을 불러옵니다.
 
-function Look() {
+const Look = ({weather}) => {
 
 
-  const temperature = 20;
-  const humidity = 60;
+  const temperature = 30;
+  const humidity = 0;
   const precipitation = 10;
 
 
@@ -25,7 +25,7 @@ function Look() {
           </div>
         </div>
         <div className="look__content">
-          <ClothingRecommendation temperature={temperature} humidity={humidity} precipitation={precipitation} />
+          <ClothingRecommendation weather={weather} />
         </div>
       </div>
   );
