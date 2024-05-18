@@ -5,9 +5,9 @@ import ClothingRecommendation from "./ClothingRecommendation"; // Card 컴포넌
 const Look = ({weather}) => {
 
 
-  const temperature = 30;
-  const humidity = 0;
-  const precipitation = 10;
+  // const temperature = 30;
+  // const humidity = 0;
+  // const precipitation = 10;
 
 
 

@@ -1,14 +1,12 @@
 import React, { useState, useEffect } from 'react';
 import WeatherCard from "./WeatherCard";
 import './WeatherApp.css'
-import WeatherHourly from "./WeatherHourly";
 
 const WeatherApp = () => {
   const [location, setLocation] = useState({});
   const [weather, setWeather] = useState({});
   const [loading, setLoading] = useState(true);
   const [locationName, setLocationName] = useState('');
-  const [hourlyWeather, setHourlyWeather] = useState([]);
 
   useEffect(() => {
     // 사용자의 현재 위치 가져오기

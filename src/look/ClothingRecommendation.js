@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './ClothingRecommendation.css'
-import ClothData from '../data/ClothData';
 
 function ClothingRecommendation({ weather }) {
   // 기본 추천과 디테일한 옷들을 담을 상태 설정
-  const [suggestion, setSuggestion] = useState('');
-  const [detailSuggestions, setDetailSuggestions] = useState([]);
+  // const [suggestion, setSuggestion] = useState('');
+  // const [detailSuggestions, setDetailSuggestions] = useState([]);
 
   console.log('확인')
   console.log(weather);

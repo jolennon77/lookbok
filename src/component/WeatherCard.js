@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react';
+import React, {useEffect} from 'react';
 import './WeatherCard.css';
 import Weather from "./weather_Icon/Weather";
 import Look from "../look/Look";
