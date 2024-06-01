@@ -1,15 +1,16 @@
 import React, { useState, useEffect } from 'react';
 import WeatherCard from "./WeatherCard";
-import './WeatherApp.css'
+import WeatherHourly from "./WeatherHourly"; // 추가
+import './WeatherApp.css';
 
 const WeatherApp = () => {
   const [location, setLocation] = useState({});
   const [weather, setWeather] = useState({});
+  const [forecast, setForecast] = useState([]); // 추가
   const [loading, setLoading] = useState(true);
   const [locationName, setLocationName] = useState('');
 
   useEffect(() => {
-    // 사용자의 현재 위치 가져오기
     if (navigator.geolocation) {
       navigator.geolocation.getCurrentPosition((position) => {
         setLocation({
@@ -21,9 +22,8 @@ const WeatherApp = () => {
   }, []);
 
   useEffect(() => {
-    // OpenWeatherMap API로 날씨 정보 가져오기
     if (location.latitude && location.longitude) {
-      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&lang=kr&appid=5875c07a24e6e9876697423c7192dc2d&units=metric&units=metric`)
+      fetch(`https://api.openweathermap.org/data/2.5/weather?lat=${location.latitude}&lon=${location.longitude}&lang=kr&appid=5875c07a24e6e9876697423c7192dc2d&units=metric`)
       .then(response => response.json())
       .then(data => {
         setWeather(data);
@@ -31,25 +31,22 @@ const WeatherApp = () => {
       })
       .catch(error => console.error('Error fetching weather:', error));
 
-      // Nominatim API로 주소 가져오기
+      fetch(`https://api.openweathermap.org/data/2.5/forecast?lat=${location.latitude}&lon=${location.longitude}&lang=kr&appid=5875c07a24e6e9876697423c7192dc2d&units=metric`)
+      .then(response => response.json())
+      .then(data => {
+        setForecast(data.list);
+      })
+      .catch(error => console.error('Error fetching forecast:', error));
+
       fetch(`https://nominatim.openstreetmap.org/reverse?format=jsonv2&lat=${location.latitude}&lon=${location.longitude}`)
       .then(response => response.json())
       .then(data => {
-        let location = data.address.city + ' ' +data.address.borough +  ' ' + data.address.suburb
+        let location = data.address.city + ' ' +data.address.borough +  ' ' + data.address.suburb;
         setLocationName(location);
       })
       .catch(error => console.error('Error fetching location:', error));
     }
-
-
-
-    //대기질 API 가져오기
-
-
   }, [location]);
-
-  // 현재 날짜 가져오기
-
 
   return (
       <div>
@@ -57,13 +54,10 @@ const WeatherApp = () => {
             <p>Loading...</p>
         ) : (
             <div className="WeatherApp">
-              <WeatherCard weather={weather}
-                           locationName={locationName}/>
-              {/*<WeatherHourly latitude={location.latitude} longitude={location.longitude} />*/}
+              <WeatherCard weather={weather} locationName={locationName} />
+              <WeatherHourly forecast={forecast} /> {/* 추가 */}
             </div>
-
         )}
-
       </div>
   );
 };

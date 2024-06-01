@@ -6,6 +6,8 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 
+
+  background: radial-gradient(178.94% 106.41% at 26.42% 106.41%, #73f1f1 0%, rgba(255, 255, 255, 0.9) 71.88%), #7d93ff;
 }
 
 code {

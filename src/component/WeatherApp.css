@@ -1,7 +1,8 @@
 .WeatherApp {
   display: flex;
-  justify-content: center;
-  /*align-items: center;*/
-  /*height: 100vh;*/
+  flex-direction: column;
+  align-items: center;
   width: 100%;
+  height: calc(100vh - 60px); /* 헤더 높이를 제외한 높이 */
+  padding: 20px;
 }
