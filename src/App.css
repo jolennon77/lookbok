@@ -12,16 +12,72 @@
   padding: 20px;
   color: white;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   font-size: 2em;
   font-weight: bold;
+  position: relative;
 }
 
 .logo {
   font-family: 'Arial', sans-serif;
   font-weight: bold;
   color: #61dafb;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.header-buttons {
+  display: flex;
+  gap: 10px; /* Space between buttons */
+  position: absolute;
+  right: 20px;
+}
+
+button {
+  font-size: 12Px;
+  /*color: whitesmoke;*/
+  padding: 0.8em 0.8em;
+  margin: 0 10px 10px 0;
+  background-color: #85d1ff;
+  font-weight: 600;
+  border: 3px solid #21a1f1;
+  border-radius: 1em;
+  transition: cubic-bezier(0.68, -0.55, 0.265, 1.55) 0.4s;
+  box-shadow: -5px 5px 0px 0px #21a1f1;
+}
+.header-name{
+  /*font-size: px;*/
+  display: flex;
+  margin-right: 100px;
+}
+
+.form-container {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  max-width: 400px;
+  width: 100%;
+  margin: 50px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-container h2 {
+  margin-bottom: 20px;
+}
+
+.form-container input[type="text"],
+.form-container input[type="password"] {
+  width: calc(100% - 20px);
+  padding: 10px;
+  margin: 10px 0;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  box-sizing: border-box;
 }
 
 @media (prefers-reduced-motion: no-preference) {
@@ -29,7 +85,6 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
-
 
 .App-link {
   color: #61dafb;
@@ -47,6 +102,5 @@
 @media (min-width: 768px) {
   .App {
     flex-direction: column;
-    justify-content: space-between;
   }
 }
